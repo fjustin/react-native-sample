@@ -4,6 +4,7 @@
  * @flow
  */
 
+// moduleの読み込み
 import React, { Component } from 'react';
 import {
   Platform,
@@ -12,6 +13,7 @@ import {
   View
 } from 'react-native';
 
+// iOSとAndroidの環境設定
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -19,6 +21,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+// 文字を入れるために<Text>を使っている
 type Props = {};
 export default class App extends Component<Props> {
   render() {
@@ -38,6 +41,16 @@ export default class App extends Component<Props> {
   }
 }
 
+// StyleSheetの定義
+
+/*
+CSS in JSの定義
+
+background-colorのようにハイフンがあるものはbackgroundColorのようにキャメルケースで定義
+数字以外のプロパティは文字列で定義。cssだとredと使えますがCSS in JSでは'red'のように文字列で定義します。
+セレクタは存在しない。
+style属性にスタイルを当てる
+*/
 const styles = StyleSheet.create({
   container: {
     flex: 1,
