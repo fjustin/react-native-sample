@@ -14,7 +14,7 @@ import{
   Text,
   TouchableOpacity,
   TextInput,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -35,22 +35,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 10,
     paddingBottom: 10,
-  }
+  },
   buttonText:{
     color: '#FFF',
     fontWeight:'500'
   }
 });
 
-export default class TodoInput extends Component{
+export default class TodoInput extends Component {
   render() {
-    return(
-      <View style={style.container}>
-        <TextInput style={style.textInput}>
-        <TouchableOpacity style={style.button}>
-          <Text style={style.buttonText}>追加</Text>
+    return (
+      <View style={styles.container}>
+        <TextInput style={styles.textInput}/>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>追加</Text>
         </TouchableOpacity>
-     </View>
-   );
+      </View>
+    );
   }
 }
