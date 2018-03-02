@@ -11,7 +11,7 @@ import {
   StyleSheet,
   Text,
   View,
-  FastList,
+  FlatList,
 } from 'react-native';
 // TodoInputモジュールを読み込む
 import TodoInput from './src/component/TodoInput';
