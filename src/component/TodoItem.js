@@ -49,7 +49,6 @@ const TodoItem = (props) => {
     <View style={styles.container}>
       <View style={styles.left}>
         <Button onPress={onDone}>
-        // Undo,Doneの切り替え
           {done? "Undo" : "Done"}
         </Button>
         <Text style={[styles.text, done && styles.doneText]} >{text}</Text>

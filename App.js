@@ -70,7 +70,7 @@
      return (
        <View style={styles.container}>
          <View style={styles.main}>
-           <TodoInput onPress={this._onPress} />
+           <TodoInput onPress={this.onPress} />
            <View style={styles.todoListContainer}>
              <FlatList
                style={styles.todoList}
