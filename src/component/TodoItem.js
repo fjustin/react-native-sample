@@ -1,5 +1,5 @@
 /*
-todoのアイテムを形成するjs
+TodoItemとしてリストを生成
 */
 
 import React from 'react';
@@ -8,7 +8,6 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
-// ボタンmoduleを読み込み
 import Button from './Button';
 
 const styles = StyleSheet.create({
@@ -26,6 +25,9 @@ const styles = StyleSheet.create({
   text: {
     color: '#333',
   },
+  doneText: {
+    textDecorationLine: 'line-through'
+  },
   deleteButton: {
     backgroundColor: '#800000',
   },
@@ -38,23 +40,28 @@ const styles = StyleSheet.create({
 const TodoItem = (props) => {
   const {
     text,
+    onDone,
+    onDelete,
+    done,
   } = props;
 
   return (
     <View style={styles.container}>
       <View style={styles.left}>
-        <Button>
-          Done
+        <Button onPress={onDone}>
+        // Undo,Doneの切り替え
+          {done? "Undo" : "Done"}
         </Button>
-        <Text style={styles.text} >{text}</Text>
+        <Text style={[styles.text, done && styles.doneText]} >{text}</Text>
       </View>
-      <Button style={styles.deleteButton}>
+      <Button
+        style={styles.deleteButton}
+        onPress={onDelete}
+      >
         Delete
       </Button>
     </View>
   );
 }
-
-// TodoItemとしてexport
 
 export default TodoItem;
